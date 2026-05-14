@@ -1,0 +1,388 @@
+.page {
+  background: #ffffff;
+  color: #222;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.headerInner {
+  height: 64px;
+  display: grid;
+  grid-template-columns: 220px 1fr 140px;
+  align-items: center;
+  width: min(1750px, 98%); /* хедер шире => логотип ближе к левому краю */
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+
+  font-size: 30px;     /* было по умолчанию (мелко) */
+  letter-spacing: 0.2px;
+}
+
+.logoMark {
+  width: 32px;         /* было 18/22 */
+  height: 28px;
+  border-radius: 8px;
+  background: #1f7a5b;
+  display: grid;
+  place-items: center;
+}
+
+.logoMark::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  /* простая “листик” форма */
+  clip-path: path("M11.8 2.1C8.6 2.4 6.3 3.8 4.8 5.8 3 8.3 2.7 11.6 3 12.9c.1.4.6.6 1 .4 1.2-.5 4.2-1.9 6-4.4 1.5-2 2.1-4.7 1.8-6.8z");
+}
+
+.logoText {
+  font-family: "Montserrat-Bold", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700; /* если твой Montserrat.ttf реально “regular”, поставь 400 */
+  letter-spacing: 0.2px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav a {
+  color: #444;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #b08a2a;
+}
+
+.headerRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  gap: 100px;
+}
+
+.loginLink {
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+
+  background: #b08a2a;      /* оранжевый */
+  border: 1px solid #b08a2a;
+  border-radius: 10px;
+  padding: 9px 16px;
+  line-height: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginLink:hover {
+  filter: brightness(0.95);
+}
+
+.logoutBtn {
+  font-size: 13px;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+
+  background: #b08a2a;      /* оранжевый */
+  border: 1px solid #b08a2a;
+}
+
+.logoutBtn:hover {
+  border-color: #b08a2a;
+  color: #b08a2a;
+  filter: brightness(0.95);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 760px;
+  overflow: hidden;
+}
+
+.heroBgImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+
+  filter: none;          /* важно */
+  transform: none;       /* важно */
+
+  image-rendering: auto;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.heroInner {
+  position: relative;
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: end;
+
+}
+
+.heroCard {
+  width: min(560px, 94%);
+  position: relative;
+  background: rgba(241, 230, 199, 0.877);
+  border: 1px solid rgba(241, 230, 199, 0.877);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.12);
+  border-radius: 18px;
+  padding: 36px 34px 60px;
+  transform: translateX(70px);
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.1;
+  color: #b08a2a;
+  font-weight: 600;
+}
+
+.heroText {
+  margin: 12px 0 16px;
+  font-size: 16px;
+  color: #444;
+  max-width: 46ch;
+}
+
+.heroBtn {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+
+  height: 42px;                    /* было 38px */
+  padding: 0 38px;
+  border: none;
+  border-radius: 10px;
+  background: #b08a2a;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.heroBtn:hover {
+  filter: brightness(0.97);
+}
+
+/* Sections */
+.section {
+  width: min(1100px, 92%);
+  margin: 40px auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 22px;
+  margin: 12px 0 22px;
+  color: #333;
+}
+
+/* How it works */
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.stepCard {
+  text-align: center;
+}
+
+.cardImg {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.stepText {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: #444;
+}
+
+/* Plans */
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.planCard {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.08);
+}
+
+.planImg {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.planBody {
+  padding: 12px 14px 14px;
+}
+
+.planBody h3 {
+  margin: 4px 0 6px;
+  font-size: 14px;
+  color: #222;
+}
+
+.planBody p {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.planLink {
+  font-size: 12px;
+  color: #444;
+  text-decoration: underline;
+}
+
+.planLink:hover {
+  color: #b08a2a;
+}
+
+/* Footer */
+.footer {
+  margin-top: 54px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 30px 0 18px;
+}
+
+.footerInner {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.6fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.footerLogo {
+  font-weight: 900;
+}
+
+.footerCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+  color: #444;
+}
+
+.footerCol a {
+  color: #444;
+  text-decoration: none;
+}
+
+.footerCol a:hover {
+  color: #b08a2a;
+}
+
+.footerTitle {
+  font-weight: 700;
+  color: #666;
+}
+
+.subscribeRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.subscribeInput {
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #e2e2e2;
+  padding: 0 12px;
+  width: 100%;
+}
+
+.subscribeBtn {
+  height: 36px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 10px;
+  background: #b08a2a;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.footerBottom {
+  width: min(1100px, 92%);
+  margin: 20px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 11px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .grid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .headerInner {
+    grid-template-columns: 200px 1fr 90px;
+  }
+}
+
+@media (max-width: 780px) {
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    display: none;
+  }
+  .heroInner {
+    justify-items: center;
+  }
+}
