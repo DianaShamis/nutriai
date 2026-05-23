@@ -45,7 +45,7 @@ export default function HomePage() {
 
           <div className={styles.headerRight}>
             {token ? (
-              <button className={styles.logoutBtn} onClick={() => setToken(null)}>
+              <button className={styles.logoutBtn} onClick={() => {setToken(null); nav("/");}}>
                 Выйти
               </button>
             ) : (
