@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     CORS_ORIGINS: List[str] = ["http://localhost:5173", "http://localhost:3000"]
 
     DATABASE_URL: AnyUrl = "postgresql+asyncpg://postgres:postgres@localhost:5432/nutriai"
-    REDIS_URL: AnyUrl = "redis://localhost:6379/0"
+    REDIS_URL: AnyUrl = "redis://localhost:6380/0"
 
     AI_BASE_URL: str = "https://example.com"
 
