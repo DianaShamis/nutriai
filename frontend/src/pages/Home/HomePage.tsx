@@ -39,7 +39,7 @@ export default function HomePage() {
           <nav className={styles.nav}>
             <a href="#home">Главная</a>
             <a href="#plans">План питания</a>
-            <a href="#about">О сервисе</a>
+            <Link to="/about">О сервисе</Link>
             <a href="#ai">Рекомендации AI</a>
           </nav>
 
@@ -169,7 +169,7 @@ export default function HomePage() {
 
           <div className={styles.footerCol}>
             <div className={styles.footerTitle}>&nbsp;</div>
-            <a href="#about">О сервисе</a>
+            <Link to="/about">О сервисе</Link>
             <a href="#ai">Рекомендации AI</a>
           </div>
 
