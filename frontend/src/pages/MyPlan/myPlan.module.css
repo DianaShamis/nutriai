@@ -1,0 +1,131 @@
+.content {
+  width: min(1100px, 92%);
+  margin: 36px auto 60px;
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #ece7d7;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  padding: 22px;
+}
+
+.sectionTitle {
+  margin: 0 0 12px;
+  color: #333;
+}
+
+.recommendations {
+  margin: 0;
+  padding-left: 18px;
+  color: #444;
+  display: grid;
+  gap: 8px;
+}
+
+.dayTabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.tab {
+  border: 1px solid #ded7c5;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: #fff;
+  color: #444;
+  cursor: pointer;
+}
+
+.tabActive {
+  background: #b08a2a;
+  border-color: #b08a2a;
+  color: #fff;
+}
+
+.mealGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.mealItem {
+  border: 1px solid #eee5d3;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fffdf9;
+}
+
+.mealType {
+  margin: 0 0 6px;
+  color: #7a6220;
+}
+
+.mealText {
+  margin: 0;
+  color: #444;
+}
+
+.weightGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.label {
+  display: grid;
+  gap: 6px;
+  color: #444;
+  font-size: 14px;
+}
+
+.input {
+  border: 1px solid #ded7c5;
+  border-radius: 10px;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.btn {
+  border: 1px solid #b08a2a;
+  background: #b08a2a;
+  color: #fff;
+  border-radius: 10px;
+  height: 40px;
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+.goalRow {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+}
+
+.hint {
+  color: #666;
+  font-size: 13px;
+}
+
+.chartWrap {
+  height: 260px;
+}
+
+@media (max-width: 900px) {
+  .weightGrid,
+  .mealGrid {
+    grid-template-columns: 1fr;
+  }
+}

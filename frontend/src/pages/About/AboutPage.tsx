@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { getToken, setToken } from "../../api/client";
+import { getProfileStartRoute } from "../Profile/profileStorage";
 
 import homeStyles from "../Home/home.module.css"; // берем стили шапки+hero с главной
 import styles from "./about.module.css";
@@ -17,7 +18,7 @@ export default function AboutPage() {
 
   function onStart() {
     if (!token) nav("/auth");
-    else nav("/"); // потом заменим на нужный роут
+    else nav(getProfileStartRoute());
   }
 
   return (

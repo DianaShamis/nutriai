@@ -3,6 +3,7 @@ import { apiPost, setToken } from "../../api/client";
 import { useNavigate } from "react-router-dom";
 import styles from "./form.module.css";
 import { isValidEmail } from "../../utils/validators";
+import { getProfileStartRoute } from "../Profile/profileStorage";
 
 type TokenResponse = { access_token: string; token_type: string };
 
@@ -66,7 +67,7 @@ export default function LoginForm() {
         password,
       });
       setToken(data.access_token);
-      nav("/", { replace: true });
+      nav(getProfileStartRoute(), { replace: true });
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Login failed";
       setBanner(mapLoginError(msg));
