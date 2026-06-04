@@ -35,7 +35,17 @@ export function saveStep2Data(data: ProfileStep2) {
 
 export function isStep1Completed() {
   const data = getStep1Data();
-  return Boolean(data.age && data.height && data.weight);
+  const age = Number(data.age);
+  const height = Number(data.height);
+  const weight = Number(data.weight);
+  return (
+    Number.isFinite(age) &&
+    Number.isFinite(height) &&
+    Number.isFinite(weight) &&
+    age > 0 &&
+    height > 0 &&
+    weight > 0
+  );
 }
 
 export function isStep2Completed() {

@@ -26,7 +26,12 @@ function saveLocal(data: WeightTrackingData): WeightTrackingData {
 
 function normalize(data: WeightTrackingData): WeightTrackingData {
   const entries = [...data.entries]
-    .filter((entry) => entry.date && Number.isFinite(entry.weight))
+    .filter(
+      (entry) =>
+        entry.date &&
+        Number.isFinite(entry.weight) &&
+        Number.isFinite(new Date(entry.date).getTime())
+    )
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   return { goal: data.goal, entries };
 }

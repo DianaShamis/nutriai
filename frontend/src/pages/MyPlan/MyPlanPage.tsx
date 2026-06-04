@@ -23,11 +23,16 @@ const mockMealPlan = [
   { day: "День 7", meals: { Завтрак: "Панкейки с бананом", Обед: "Куриный суп", Ужин: "Лосось и брокколи" } },
 ];
 
-const today = new Date().toISOString().slice(0, 10);
+function formatShortDate(dateInput: string) {
+  const date = new Date(dateInput);
+  if (!Number.isFinite(date.getTime())) return dateInput;
+  return date.toLocaleDateString("ru-RU", { day: "2-digit", month: "2-digit" });
+}
 
 export default function MyPlanPage() {
   const nav = useNavigate();
   const token = getToken();
+  const today = new Date().toISOString().slice(0, 10);
   const [activeDay, setActiveDay] = useState(0);
   const [entries, setEntries] = useState<Array<{ date: string; weight: number }>>([]);
   const [goal, setGoal] = useState<string>("");
@@ -65,7 +70,7 @@ export default function MyPlanPage() {
   }
 
   const chartData = entries.map((item) => ({
-    date: item.date.slice(5),
+    date: formatShortDate(item.date),
     weight: item.weight,
   }));
 

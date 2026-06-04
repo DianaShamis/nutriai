@@ -75,7 +75,7 @@ export async function apiPut<T>(path: string, body: unknown): Promise<T> {
 
 function authHeaders(): HeadersInit {
   const token = getToken();
-  return token ? { Authorization: `${"Bearer"} ${token}` } : {};
+  return token ? { Authorization: "Bearer " + token } : {};
 }
 
 async function request<T>(path: string, init: RequestInit): Promise<T> {

@@ -19,7 +19,7 @@ export default function ProfileStep2Page() {
 
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    saveStep2Data({ goal, activity, allergies: allergies.trim() });
+    saveStep2Data({ goal: goal.trim(), activity: activity.trim(), allergies: allergies.trim() });
     nav("/my-plan");
   }
 

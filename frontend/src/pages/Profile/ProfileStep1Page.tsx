@@ -18,7 +18,7 @@ export default function ProfileStep1Page() {
 
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    saveStep1Data({ age: age.trim(), height: height.trim(), weight: weight.trim() });
+    saveStep1Data({ age, height, weight });
     nav("/profile/step2");
   }
 
@@ -60,6 +60,9 @@ export default function ProfileStep1Page() {
                 Возраст
                 <input
                   className={styles.input}
+                  type="number"
+                  min="1"
+                  max="120"
                   required
                   inputMode="numeric"
                   value={age}
@@ -70,6 +73,10 @@ export default function ProfileStep1Page() {
                 Рост (см)
                 <input
                   className={styles.input}
+                  type="number"
+                  min="50"
+                  max="300"
+                  step="0.1"
                   required
                   inputMode="decimal"
                   value={height}
@@ -80,6 +87,10 @@ export default function ProfileStep1Page() {
                 Вес (кг)
                 <input
                   className={styles.input}
+                  type="number"
+                  min="20"
+                  max="500"
+                  step="0.1"
                   required
                   inputMode="decimal"
                   value={weight}
