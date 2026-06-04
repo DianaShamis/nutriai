@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./home.module.css";
 import { getToken, setToken } from "../../api/client";
+import { getProfileStartRoute } from "../Profile/profileStorage";
 
 // ВАЖНО: положи изображения сюда (пути/имена можешь поменять под свои файлы):
 import heroImg from "../../assets/home/hero.jpg";
@@ -19,11 +20,8 @@ export default function HomePage() {
   const token = getToken();
 
   function onStart() {
-    // Пока логика простая:
-    // если пользователь не вошёл — кидаем на /auth
-    // если вошёл — позже заменим на /plan или /profile
     if (!token) nav("/auth");
-    else nav("/"); // временно, можешь заменить на будущий роут
+    else nav(getProfileStartRoute());
   }
 
   return (
@@ -38,7 +36,7 @@ export default function HomePage() {
 
           <nav className={styles.nav}>
             <a href="#home">Главная</a>
-            <a href="#plans">План питания</a>
+            {token ? <Link to="/my-plan">План питания</Link> : <a href="#plans">План питания</a>}
             <Link to="/about">О сервисе</Link>
             <a href="#ai">Рекомендации AI</a>
           </nav>
